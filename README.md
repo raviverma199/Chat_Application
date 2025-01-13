@@ -39,9 +39,38 @@ Ensure you have the following installed:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/raviverma199/Chat_Application.git
-cd Chat_Application
+   git clone https://github.com/raviverma199/Chat_Application.git
 
-```bash
-git clone https://github.com/raviverma199/Chat_Application.git
-cd Chat_Application
+   ```
+
+2. **Open Terminals for Backend and Frontend:**
+
+   ```bash
+   cd Chat_Application/backend
+
+   cd Chat_Application/frontend
+
+   ```
+
+3. **Install Dependencies for backend and frotend:**
+
+   ```bash
+   npm install
+
+   ```
+   
+4. **Create a .env file in the root directory of backend folder and add the following variables:**
+
+   ```bash
+   SECRET_KEY=your_secret_key  
+   MONGODB_URI=mongodb://localhost:27017/chat-app  # Make sure MongoDB is running locally or update the connection string.
+   PORT=2020 # Default port
+
+   ```
+
+5. **Run the following command:**
+
+   ```bash
+   npm start
+
+   ```
