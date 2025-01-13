@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const SignupSchema = new mongoose.Schema({
-  fullName: {
+  fullname: {
     type: String,
     required: true,
   },

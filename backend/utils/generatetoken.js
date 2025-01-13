@@ -7,12 +7,12 @@ const GenerateTokenAndSetCookie = async (userId, res) => {
     let Token = await jwt.sign({ userId }, process.env.SECRET_KEY, {
       expiresIn: "15d",
     });
-
     res.cookie("jwt", Token, {
-      MaxAge: 15 * 24 * 60 * 60 * 1000, //MS
+      maxAge: 15 * 24 * 60 * 60 * 1000, //MS
       httpOnly: true, // prevent xxs attack (cross site scripting attack)
       sameSite: "strict"  // prevent csrf attack (cross site forgery attack)
     });
+
   } catch (error) {
     console.error(error);
   }

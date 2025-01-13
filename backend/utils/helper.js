@@ -1,11 +1,11 @@
 import bcrypt from "bcrypt";
 
 // Function to send the Error Response in JSON
-function SendErrorResponse(success, res, msg, statusCode = 400) {
+function SendErrorResponse(success, res, error, statusCode = 400) {
   try {
     const response = {
       success: success,
-      message: msg,
+      error: error,
     };
 
     res.status(statusCode).json(response);

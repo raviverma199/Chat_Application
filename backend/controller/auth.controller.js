@@ -6,8 +6,8 @@ import bcrypt from "bcrypt";
 // Signup Controller
 export const signup = async (req, res) => {
   try {
-    const { fullName, username, password, gender } = req.body;
-    if (!fullName || !username || !password || !gender) {
+    const { fullname, username, password, gender } = req.body;
+    if (!fullname || !username || !password || !gender) {
       return SendErrorResponse(false, res, "Required fields are blank", 400);
     }
 
@@ -20,7 +20,7 @@ export const signup = async (req, res) => {
 
     // Create User
     const user = new User({
-      fullName,
+      fullname,
       username,
       password: HasedPassword,
       gender,
@@ -57,16 +57,18 @@ export const loginuser = async (req, res) => {
     }
 
     // Encrypt the password
-    let EncryptPassword = await bcrypt.compare(password, UserExist?.password);
+    let EncryptPassword = await bcrypt.compare(password, UserExist.password);
     if (!EncryptPassword) {
       return SendErrorResponse(false, res, "Password is Incorrect", 400);
     }
-
     await GenerateTokenAndSetCookie(UserExist._id, res);
-
     res
-      .status(201)
-      .json({ success: true, msg: "User Login Successfully", Data: UserExist });
+      .status(200)
+      .json({
+        _id: UserExist._id,
+        fullname: UserExist.fullname,
+        username: UserExist.username
+      });
   } catch (error) {
     return SendErrorResponse(
       false,
@@ -78,10 +80,10 @@ export const loginuser = async (req, res) => {
 };
 
 // Logout Controller
-export const logoutuser =  (req, res) => {
+export const logoutuser = (req, res) => {
   try {
-    res.cookie("jwt", "", {maxAge: 0})
-    res.status(200).json({success: true, msg: "Logout successfully"})
+    res.cookie("jwt", "", { maxAge: 0 });
+    res.status(200).json({ success: true, msg: "Logout successfully" });
   } catch (error) {
     return SendErrorResponse(
       false,
