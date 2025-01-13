@@ -10,19 +10,18 @@ A modern, real-time chat application built with **React**, **Node.js**, **Expres
 - **Real-Time Communication**: Instant messaging with real-time updates using Socket.IO.
 - **Online Users**: View a list of currently active users.
 - **One-on-One Chat**: Private messaging between two users.
-- **Group Chat**: Chat with multiple users in a group.
-- **Responsive Design**: Optimized for devices of all screen sizes.
+- **Design**: A functional interface for chatting. *(Responsive design is currently not implemented.)*
 
 ---
 
 ## Tech Stack
 
-- **Frontend**: React
+- **Frontend**: React.js
 - **Backend**: Node.js, Express
 - **Real-Time Communication**: Socket.IO
 - **Database**: MongoDB
 - **Authentication**: JSON Web Tokens (JWT) and bcrypt
-- **Styling**: CSS/Styled Components
+- **Styling**: Tailwind Css, daisyui
 
 ---
 
@@ -40,5 +39,9 @@ Ensure you have the following installed:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/chat-application.git
-cd chat-application
+git clone https://github.com/raviverma199/Chat_Application.git
+cd Chat_Application
+
+```bash
+git clone https://github.com/raviverma199/Chat_Application.git
+cd Chat_Application
