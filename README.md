@@ -1,6 +1,6 @@
 # Chat Application
 
-A modern, real-time chat application built with **React**, **Node.js**, **Express**, **Socket.IO**, and **MongoDB**. This app features secure user authentication, responsive design, and real-time communication. It supports both one-on-one and group chats, ensuring a seamless user experience with real-time updates.
+A modern, real-time chat application built with **React**, **Node.js**, **Express**, **Socket.IO**, and **MongoDB**. This app features secure user authentication, and real-time communication. It supports one-on-one, ensuring a seamless user experience with real-time updates.
 
 ---
 
